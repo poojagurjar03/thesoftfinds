@@ -1,118 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Scholar's Lair — Dark Academia Interiors</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aesthetic Lair | Curated Cute Setups</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --charcoal: #1a1a1a;
-      --charcoal-mid: #242424;
-      --gold: #c5a059;
-      --gold-lt: #d4b472;
-      --parchment: #f4f1ea;
-      --text-muted: #9a8f7e;
-      --border: rgba(197,160,89,.18);
-      --transition: .35s cubic-bezier(.4,0,.2,1);
+      --bg: #FFF9F0;          /* Creamy Vellum */
+      --card-bg: #FFFFFF;     /* Pure White */
+      --text: #6B4E3D;        /* Soft Cocoa */
+      --accent: #FFB7B2;      /* Peach Pink */
+      --secondary: #E2F0CB;   /* Soft Mint */
+      --shadow: 0 10px 30px rgba(107, 78, 61, 0.08);
+      --transition: all 0.3s cubic-bezier(.4,0,.2,1);
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      background: var(--charcoal);
-      color: var(--parchment);
-      font-family: 'EB Garamond', serif;
-      line-height: 1.7;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Quicksand', sans-serif;
+      margin: 0; padding: 0; line-height: 1.6;
       overflow-x: hidden;
     }
-    h1, h2, h3 { font-family: 'Playfair Display', serif; }
-    a { text-decoration: none; color: inherit; }
 
-    /* Navigation */
     nav {
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1.5rem 5%; border-bottom: 1px solid var(--border);
+      padding: 1rem 5%; background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000;
+      border-bottom: 1px solid rgba(255, 183, 178, 0.2);
     }
-    .logo { font-size: 1.5rem; font-weight: 700; letter-spacing: 1px; }
-    .logo span { color: var(--gold); }
 
-    /* Hero Section */
+    .logo { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); letter-spacing: 1px; }
+    .logo span { color: var(--text); }
+
     .hero {
-      text-align: center; padding: 100px 5%;
-      background: radial-gradient(circle, rgba(197,160,89,0.05) 0%, transparent 70%);
+      text-align: center; padding: 80px 5%;
+      background: radial-gradient(circle at top, #FFEDEB 0%, transparent 70%);
     }
-    .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 20px; }
-    .hero p { font-style: italic; color: var(--text-muted); font-size: 1.2rem; }
 
-    /* Product Grid */
-    .section-padding { padding: 80px 5%; }
+    .hero h1 { font-family: 'Outfit', sans-serif; font-size: clamp(2.5rem, 6vw, 4rem); margin: 0; color: var(--text); line-height: 1.2; }
+    .hero p { font-size: 1.2rem; opacity: 0.8; margin-top: 15px; font-style: italic; }
+
     .grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px; max-width: 1200px; margin: 0 auto;
+      gap: 30px; max-width: 1200px; margin: 0 auto 80px; padding: 0 5%;
     }
-    .card {
-      background: var(--charcoal-mid); border: 1px solid var(--border);
-      padding: 30px; border-radius: 4px; transition: var(--transition);
-    }
-    .card:hover { transform: translateY(-10px); border-color: var(--gold); }
-    .card h3 { color: var(--gold); margin-bottom: 15px; }
-    .btn {
-      display: inline-block; margin-top: 20px; padding: 10px 20px;
-      border: 1px solid var(--gold); color: var(--gold); transition: var(--transition);
-    }
-    .btn:hover { background: var(--gold); color: var(--charcoal); }
 
-    /* Footer */
-    footer { text-align: center; padding: 40px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+    .card {
+      background: var(--card-bg); border-radius: 24px; padding: 30px;
+      box-shadow: var(--shadow); transition: var(--transition); border: 2px solid transparent;
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+    }
+
+    .card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 15px 45px rgba(255, 183, 178, 0.2); }
+    
+    .card h3 { font-family: 'Outfit', sans-serif; font-size: 1.4rem; margin-bottom: 10px; color: var(--text); }
+    .card p { font-size: 1rem; color: #8C7B70; margin-bottom: 20px; }
+
+    .btn {
+      display: inline-block; padding: 12px 28px;
+      background: var(--accent); color: white; border-radius: 50px;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+      transition: var(--transition); border: none; font-size: 0.85rem;
+    }
+
+    .btn:hover { background: var(--text); transform: scale(1.05); cursor: pointer; }
+
+    footer { text-align: center; padding: 60px; border-top: 1px solid rgba(107, 78, 61, 0.1); font-size: 0.9rem; }
   </style>
 </head>
 <body>
 
   <nav>
-    <div class="logo">THE <span>SCHOLAR'S</span> LAIR</div>
-    <div><a href="#newsletter" class="btn" style="margin-top:0">Join the Circle</a></div>
+    <div class="logo">AESTHETIC <span>LAIR</span></div>
+    <a href="#newsletter" class="btn" style="padding: 10px 20px;">Join the Club</a>
   </nav>
 
   <header class="hero">
-    <h1>Curating <em>Atmosphere</em></h1>
-    <p>For the reader, the writer, and the intellectual maximalist.</p>
+    <h1>Curating Your <em>Dream</em> Desk</h1>
+    <p>Soft textures, glowing lights, and cozy essentials for a joyful workspace.</p>
   </header>
 
-  <section class="section-padding">
-    <div class="grid">
-      <div class="card">
-        <h3>The Banker's Lamp</h3>
-        <p>The iconic green glass and brass glow. Every great study begins with this light.</p>
-        <a href="#" class="btn">View on Amazon</a>
-      </div>
-      <div class="card">
-        <h3>Floating Globe</h3>
-        <p>A touch of modern mystery. A levitating centerpiece for your mahogany bookshelf.</p>
-        <a href="#" class="btn">View on Amazon</a>
-      </div>
-      <div class="card">
-        <h3>Velvet Armchair</h3>
-        <p>Sumptuous comfort in deep jewel tones. The perfect throne for long reading nights.</p>
-        <a href="#" class="btn">View on Amazon</a>
-      </div>
+  <div class="grid">
+    <div class="card">
+      <h3>✨ Magical Glow Board</h3>
+      <p>The viral Zesta 3D LED Message Board. Write your dreams, light them up, and transform your desk into a glowing sanctuary.</p>
+      <a href="https://amzn.to/3NYDoSz" target="_blank" class="btn">Shop the Glow</a>
     </div>
-  </section>
 
-  <section id="newsletter" class="section-padding" style="text-align: center; background: var(--charcoal-mid);">
-    <h2>Join the Inner Circle</h2>
-    <p>Weekly curations of antique finds and moody inspiration.</p>
-    <br>
-    <form>
-      <input type="email" placeholder="Your email address" style="padding: 10px; width: 250px; background: transparent; border: 1px solid var(--gold); color: white;">
-      <button type="submit" class="btn" style="margin-top:0">Subscribe</button>
-    </form>
-  </section>
+    <div class="card">
+      <h3>🌸 Petal Velvet Chair</h3>
+      <p>A touch of floral luxury for your room. Ergonomic support meets soft-girl aesthetic in this stunning velvet swivel chair.</p>
+      <a href="#" class="btn">View Selection</a>
+    </div>
 
-  <footer>
-    <p>&copy; 2026 The Scholar's Lair. Built for the modern intellectual.</p>
-    <p style="opacity: 0.5; margin-top: 10px;">Disclosure: As an Amazon Associate, I earn from qualifying purchases.</p>
+    <div class="card">
+      <h3>🍦 Pastel Organizer</h3>
+      <p>Keep your station clutter-free with these transparent cream drawers. Perfect for pens, washi tape, and cute stickers.</p>
+      <a href="#" class="btn">Organize Now</a>
+    </div>
+  </div>
+
+  <footer id="newsletter">
+    <p>&copy; 2026 The Aesthetic Lair. Making workspaces cuter, one pin at a time.</p>
+    <p style="font-size: 0.75rem; opacity: 0.6; margin-top: 15px;">*As an Amazon Associate, I earn from qualifying purchases. Your support helps keep this lair aesthetic!</p>
   </footer>
 
 </body>
-</html>-spacing: .12em;
+</html>

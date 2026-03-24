@@ -603,4 +603,491 @@
       border-radius: var(--radius-sm);
     }
     .value-chip-icon { font-size: 1.1rem; line-height: 1.5; }
-    .value-chi
+    .value-chip-text strong {
+      display: block; font-size: .82rem;
+      font-weight: 500; color: var(--text);
+      margin-bottom: .1rem;
+    }
+    .value-chip-text span { font-size: .75rem; color: var(--text-lt); }
+
+    .about-visual-wrap { position: relative; }
+    .about-main-visual {
+      background: linear-gradient(145deg, var(--sky-lt), var(--mint-lt));
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      aspect-ratio: .9;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1.5rem;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-main-visual::before {
+      content: '';
+      position: absolute; width: 250px; height: 250px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.7), transparent 70%);
+      top: -60px; left: -60px;
+    }
+    .about-emojis {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      position: relative; z-index: 1;
+    }
+    .about-emoji-item {
+      background: rgba(255,255,255,.8);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,.95);
+      padding: 1.2rem;
+      text-align: center;
+      font-size: 2rem;
+      transition: transform var(--tr);
+    }
+    .about-emoji-item:hover { transform: translateY(-3px); }
+    .about-emoji-item p {
+      font-size: .72rem; color: var(--text-md);
+      margin-top: .4rem; margin-bottom: 0;
+    }
+    .about-float-badge {
+      position: absolute; bottom: -1rem; right: -1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      min-width: 130px;
+    }
+    .about-float-badge-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem; color: var(--sky-dk);
+      display: block; line-height: 1;
+    }
+    .about-float-badge-lbl { font-size: .7rem; color: var(--text-lt); letter-spacing: .08em; text-transform: uppercase; }
+
+    /* ============================================================
+       NEWSLETTER
+    ============================================================ */
+    #newsletter {
+      padding: 6rem 5%;
+      background: var(--cream);
+    }
+    .newsletter-wrap {
+      max-width: 600px; margin: 0 auto; text-align: center;
+    }
+    .newsletter-icon-row {
+      display: flex; justify-content: center; gap: .5rem;
+      margin-bottom: 1.5rem; font-size: 1.6rem;
+    }
+    .newsletter-wrap h2 { margin-bottom: .75rem; }
+    .newsletter-wrap p { color: var(--text-md); font-weight: 300; margin-bottom: 2rem; }
+    .newsletter-input-row {
+      display: flex;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-full);
+      overflow: hidden;
+      padding: .3rem .3rem .3rem 1.4rem;
+      transition: border-color var(--tr), box-shadow var(--tr);
+      gap: .5rem;
+    }
+    .newsletter-input-row:focus-within {
+      border-color: var(--sky-dk);
+      box-shadow: 0 0 0 4px rgba(138,196,226,.15);
+    }
+    .newsletter-input-row input {
+      flex: 1; border: none; outline: none;
+      font-family: 'DM Sans', sans-serif;
+      font-size: .95rem; color: var(--text);
+      background: transparent;
+    }
+    .newsletter-input-row input::placeholder { color: var(--text-lt); }
+    .newsletter-input-row button {
+      background: linear-gradient(135deg, var(--sky-dk), var(--mint-dk));
+      color: var(--white); border: none;
+      border-radius: var(--radius-full);
+      padding: .7rem 1.6rem;
+      font-size: .85rem; font-weight: 500;
+      transition: all var(--tr);
+    }
+    .newsletter-input-row button:hover { opacity: .9; transform: scale(1.02); }
+    .newsletter-note { font-size: .75rem; color: var(--text-lt); margin-top: .9rem; }
+    .newsletter-perks {
+      display: flex; justify-content: center; gap: 1.5rem;
+      flex-wrap: wrap; margin-top: 2rem;
+    }
+    .n-perk {
+      display: flex; align-items: center; gap: .4rem;
+      font-size: .8rem; color: var(--text-md);
+    }
+    .n-perk-icon { font-size: .9rem; }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 4rem 5% 2rem;
+    }
+    .footer-grid {
+      max-width: 1160px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    .footer-brand-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem; color: var(--text);
+      display: flex; align-items: center; gap: .4rem;
+      margin-bottom: .75rem;
+    }
+    .footer-brand-p {
+      font-size: .88rem; color: var(--text-md);
+      font-weight: 300; line-height: 1.7; max-width: 260px;
+      margin-bottom: 1.25rem;
+    }
+    .footer-socials { display: flex; gap: .6rem; }
+    .footer-soc {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--cream); border: 1.5px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem; color: var(--text-md);
+      transition: all var(--tr);
+    }
+    .footer-soc:hover { background: var(--sky-lt); border-color: var(--sky-dk); color: var(--sky-dk); }
+    .footer-col h4 {
+      font-size: .72rem; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase;
+      color: var(--text); margin-bottom: 1.1rem;
+    }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
+    .footer-col a { font-size: .88rem; color: var(--text-md); font-weight: 300; transition: color var(--tr); }
+    .footer-col a:hover { color: var(--sky-dk); }
+    .footer-bottom {
+      max-width: 1160px; margin: 0 auto;
+      padding-top: 1.75rem; border-top: 1px solid var(--border);
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 1.5rem; flex-wrap: wrap;
+    }
+    .footer-copy { font-size: .78rem; color: var(--text-lt); }
+    .footer-disclosure {
+      flex: 1; min-width: 260px;
+      font-size: .73rem; color: var(--text-lt);
+      font-weight: 300; line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(22px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity:0; } to { opacity:1; }
+    }
+    @keyframes blobFloat {
+      0%,100% { border-radius:60% 40% 55% 45%/45% 55% 40% 60%; transform:translateY(0); }
+      50%      { border-radius:45% 55% 40% 60%/60% 40% 55% 45%; transform:translateY(-14px); }
+    }
+    @keyframes floatEmoji {
+      0%,100% { transform:translateY(0); }
+      50%      { transform:translateY(-8px); }
+    }
+    @keyframes floatCard1 {
+      0%,100% { transform:translateY(0) rotate(2deg); }
+      50%      { transform:translateY(-8px) rotate(2deg); }
+    }
+    @keyframes floatCard2 {
+      0%,100% { transform:translateY(0) rotate(-2deg); }
+      50%      { transform:translateY(-6px) rotate(-2deg); }
+    }
+
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    .reveal-delay-1 { transition-delay:.1s; }
+    .reveal-delay-2 { transition-delay:.2s; }
+    .reveal-delay-3 { transition-delay:.3s; }
+    .reveal-delay-4 { transition-delay:.4s; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 7rem; }
+      .hero-desc, .section-sub { margin-left: auto; margin-right: auto; }
+      .hero-actions, .hero-stats { justify-content: center; }
+      .hero-right { max-width: 340px; margin: 0 auto; }
+      .about-layout { grid-template-columns: 1fr; gap: 3rem; }
+      .lifestyle-banner { grid-template-columns: 1fr; }
+      .lifestyle-visual { max-width: 340px; margin: 0 auto; }
+    }
+    @media (max-width: 680px) {
+      .nav-links, .nav-pill { display: none; }
+      .nav-hamburger { display: flex; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); gap: .85rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .about-values { grid-template-columns: 1fr; }
+      section { padding: 4rem 5%; }
+      .hero { gap: 2.5rem; }
+      .hero-blob-1 { width: 300px; height: 300px; }
+      .hero-mini-card-1, .hero-mini-card-2 { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="container nav-inner">
+      <div class="nav-brand">
+        <div class="nav-brand-dot"></div>
+        The Soft Finds
+      </div>
+      <ul class="nav-links">
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="#newsletter" class="nav-pill nav-pill-outline">Join Us</a>
+        <a href="#shop" class="nav-pill nav-pill-filled">Shop Now ✦</a>
+      </div>
+      <button class="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section style="padding:0; background: var(--cream);">
+    <div class="hero">
+      <div class="hero-left">
+        <div class="hero-tag">
+          <div class="hero-tag-dot"></div>
+          Aesthetic · Cute · Cozy Finds ✨
+        </div>
+        <h1>
+          Find the
+          <em>Softest</em>
+          <span class="outline-text">Things</span>
+        </h1>
+        <p class="hero-desc">Carefully curated aesthetic room decor, kawaii stationery, cozy lifestyle finds, and fashion accessories — all in one dreamy place.</p>
+        <div class="hero-actions">
+          <a href="#shop" class="btn-main">Browse Collection →</a>
+          <a href="#about" class="btn-ghost">Our Story ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <span class="hero-stat-num">50+</span>
+            <span class="hero-stat-lbl">Curated Finds</span>
+          </div>
+          <div style="width:1px; background:var(--border);"></div>
+          <div>
+            <span class="hero-stat-num">4</span>
+            <span class="hero-stat-lbl">Aesthetic Worlds</span>
+          </div>
+          <div style="width:1px; background:var(--border);"></div>
+          <div>
+            <span class="hero-stat-num">$10–$200</span>
+            <span class="hero-stat-lbl">Price Range</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+        <div class="hero-card-stack">
+          <div class="hero-main-card">
+            <div class="hero-card-visual">🌸</div>
+            <div class="hero-card-label">Cloud Lamp</div>
+            <div class="hero-card-sub">Aesthetic Room Decor</div>
+            <div class="hero-card-price">From $35 on Amazon</div>
+          </div>
+          <div class="hero-mini-card hero-mini-card-1">
+            <span class="hero-mini-icon">⭐</span>
+            <div>
+              <strong style="font-size:.8rem; display:block;">Editor's Pick</strong>
+              <span style="font-size:.72rem; color:var(--text-lt);">Fairy Light Curtain</span>
+            </div>
+          </div>
+          <div class="hero-mini-card hero-mini-card-2">
+            <span class="hero-mini-icon">🛍️</span>
+            <div>
+              <strong style="font-size:.8rem; display:block;">New Drop</strong>
+              <span style="font-size:.72rem; color:var(--text-lt);">Pastel Plushie Set</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES STRIP -->
+  <div class="categories">
+    <div class="categories-inner">
+      <div class="cat-pill active"><span class="cat-pill-emoji">✨</span> All Finds</div>
+      <div class="cat-pill"><span class="cat-pill-emoji">🏮</span> Room Decor</div>
+      <div class="cat-pill"><span class="cat-pill-emoji">🕯️</span> Cozy Lifestyle</div>
+      <div class="cat-pill"><span class="cat-pill-emoji">🎀</span> Fashion Accessories</div>
+      <div class="cat-pill"><span class="cat-pill-emoji">🧸</span> Kawaii & Cute</div>
+      <div class="cat-pill"><span class="cat-pill-emoji">📓</span> Stationery</div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="shop">
+    <div class="container">
+      <div class="section-header-row reveal">
+        <div>
+          <div class="eyebrow">Featured Finds</div>
+          <h2 class="section-title">Handpicked <em>Just for You</em></h2>
+        </div>
+        <a href="#" class="view-all">View all finds →</a>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- 1 -->
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-img">
+            <div class="product-img-bg bg-sky"></div>
+            <div class="product-badge badge-pick">Editor's Pick</div>
+            <div class="product-heart">🤍</div>
+            <div class="product-emoji">☁️</div>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Room Decor</div>
+            <div class="product-name">Cloud Night Light Lamp</div>
+            <div class="product-desc">Dreamy LED cloud lamp with color-changing modes. The softest glow for any aesthetic shelf or desk.</div>
+            <div class="product-footer">
+              <div class="product-price"><small>From</small>$35–$65</div>
+              <a href="#" class="btn-shop" target="_blank" rel="noopener nofollow">Amazon →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-img">
+            <div class="product-img-bg bg-blush"></div>
+            <div class="product-badge badge-love">Most Loved</div>
+            <div class="product-heart">🤍</div>
+            <div class="product-emoji">🕯️</div>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Cozy Lifestyle</div>
+            <div class="product-name">Aesthetic Soy Candle Set</div>
+            <div class="product-desc">Pastel-tinted soy candles with cotton wick and soft florals. Makes every room feel like a warm hug.</div>
+            <div class="product-footer">
+              <div class="product-price"><small>From</small>$22–$45</div>
+              <a href="#" class="btn-shop" target="_blank" rel="noopener nofollow">Amazon →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-img">
+            <div class="product-img-bg bg-mint"></div>
+            <div class="product-badge badge-new">New Drop</div>
+            <div class="product-heart">🤍</div>
+            <div class="product-emoji">🧸</div>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Kawaii & Cute</div>
+            <div class="product-name">Pastel Plushie Collection</div>
+            <div class="product-desc">Squishy, soft, and impossibly cute. These pastel plushies are the perfect shelf companion or gift.</div>
+            <div class="product-footer">
+              <div class="product-price"><small>From</small>$18–$40</div>
+              <a href="#" class="btn-shop" target="_blank" rel="noopener nofollow">Amazon →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="product-card reveal reveal-delay-4">
+          <div class="product-img">
+            <div class="product-img-bg bg-cream"></div>
+            <div class="product-heart">🤍</div>
+            <div class="product-emoji">🎀</div>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Fashion Accessories</div>
+            <div class="product-name">Satin Bow Hair Clip Set</div>
+            <div class="product-desc">Soft satin oversized bows in pastel shades. The most Pinterest-worthy hair accessory of the season.</div>
+            <div class="product-footer">
+              <div class="product-price"><small>From</small>$14–$28</div>
+              <a href="#" class="btn-shop" target="_blank" rel="noopener nofollow">Amazon →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="product-card reveal reveal-delay-1">
+          <div class="product-img">
+            <div class="product-img-bg bg-sky"></div>
+            <div class="product-badge badge-pick">Trending</div>
+            <div class="product-heart">🤍</div>
+            <div class="product-emoji">🌟</div>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Room Decor</div>
+            <div class="product-name">Fairy Light Curtain</div>
+            <div class="product-desc">Twinkling micro-LED curtain lights in warm white. Transforms any wall into a magical backdrop instantly.</div>
+            <div class="product-footer">
+              <div class="product-price"><small>From</small>$25–$55</div>
+              <a href="#" class="btn-shop" target="_blank" rel="noopener nofollow">Amazon →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="product-card reveal reveal-delay-2">
+          <div class="product-img">
+            <div class="product-img-bg bg-mint"></div>
+            <div class="product-heart">🤍</div>
+            <div class="product-emoji">☕</div>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Cozy Lifestyle</div>
+            <div class="product-name">Aesthetic Ceramic Mug Set</div>
+            <div class="product-desc">Hand-painted pastel ceramic mugs with cloud and star motifs. Morning coffee just got an upgrade.</div>
+            <div class="product-footer">
+              <div class="product-price"><small>From</small>$20–$42</div>
+              <a href="#" class="btn-shop" target="_blank" rel="noopener nofollow">Amazon →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="product-card reveal reveal-delay-3">
+          <div class="product-img">
+            <div class="product-img-bg bg-blush"></div>
+            <div class="product-badge badge-love">Fan Fave</div>
+            <div class="product-heart">🤍</div>
+            <div class="product-emoji">📓</div>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Stationery</div>
+            <div class="product-name">Kawaii Stationery Set</div>
+            <div class="product-desc">Pastel pens, washi tape, star sticky notes, and floral stickers — the ultimate aesthetic desk kit.</div>
+            <div class="product-footer">
+              <div class="product-price"><small>From</small>$16–$35</div>
+              <a href="#" class="btn-shop" target="_blank" rel="noopener nofollow">Amazon →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="product-card reveal reveal-delay-4">
+          <div class="product-img">
+            <div class="product-img-bg bg-sky"></div>
+            <div class="product-heart">🤍</div>
+            <div class="product-emoji">🪞</div>
+          </div>
+          <div class="product-body">
+            <div class="product-cat">Room Decor</div>

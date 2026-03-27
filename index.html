@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Soft Finds | Aesthetic Amazon Finds</title>
+<title>The Soft Finds | Viral Amazon Finds</title>
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -21,7 +21,6 @@ body {
   padding: 20px;
 }
 
-/* NAV */
 nav {
   display: flex;
   justify-content: space-between;
@@ -31,7 +30,7 @@ nav {
 
 .logo {
   font-family: 'DM Serif Display';
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .btn {
@@ -43,7 +42,6 @@ nav {
   font-weight: 600;
 }
 
-/* HERO */
 .hero {
   background: linear-gradient(135deg,#d8eef8,#ffd8e8);
   padding: 40px;
@@ -53,14 +51,12 @@ nav {
 .hero h1 {
   font-family: 'DM Serif Display';
   font-size: 42px;
-  margin-bottom: 10px;
 }
 
 .hero p {
   color: #5f6f80;
 }
 
-/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -68,7 +64,6 @@ nav {
   margin-top: 30px;
 }
 
-/* CARD */
 .card {
   background: white;
   border-radius: 18px;
@@ -81,14 +76,21 @@ nav {
   transform: translateY(-6px);
 }
 
+.badge {
+  font-size: 12px;
+  color: #4a9ec7;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
 .card h3 {
   font-size: 16px;
 }
 
-.price {
-  font-size: 22px;
-  color: #4a9ec7;
-  font-weight: bold;
+.desc {
+  font-size: 13px;
+  color: #6b7f94;
+  margin: 10px 0;
 }
 
 .buy {
@@ -97,13 +99,16 @@ nav {
   margin-top: 10px;
   background: linear-gradient(135deg,#4a9ec7,#40c6af);
   color: white;
-  padding: 10px;
+  padding: 12px;
   border-radius: 999px;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* footer */
+.buy:hover {
+  opacity: .9;
+}
+
 .footer {
   margin-top: 30px;
   font-size: 13px;
@@ -122,65 +127,65 @@ nav {
 </nav>
 
 <div class="hero">
-  <h1>Aesthetic Finds, Curated for You 🌸</h1>
-  <p>Viral Amazon room decor that makes your space feel cozy, aesthetic, and Pinterest-worthy.</p>
+  <h1>Viral Amazon Finds ✨</h1>
+  <p>These are the exact aesthetic products people are saving on Pinterest right now. Tap any item to check today’s price and grab it before it trends out.</p>
 </div>
 
 <div class="grid" id="shop">
 
-<!-- 1 -->
 <div class="card">
+<div class="badge">🔥 Viral Pick</div>
 <h3>Astronaut Galaxy Projector</h3>
-<div class="price">$35</div>
-<a class="buy" href="https://amzn.to/4t3k8SE" target="_blank">View on Amazon →</a>
+<p class="desc">Turn your room into a dreamy galaxy in seconds. One of the most saved aesthetic finds right now.</p>
+<a class="buy" href="https://amzn.to/4t3k8SE" target="_blank">Check latest price →</a>
 </div>
 
-<!-- 2 -->
 <div class="card">
+<div class="badge">✨ Cozy Upgrade</div>
 <h3>Minimal LED Desk Lamp</h3>
-<div class="price">$29</div>
-<a class="buy" href="https://amzn.to/4uVEajY" target="_blank">View on Amazon →</a>
+<p class="desc">Soft lighting that instantly makes your desk feel expensive and calm.</p>
+<a class="buy" href="https://amzn.to/4uVEajY" target="_blank">Check latest price →</a>
 </div>
 
-<!-- 3 -->
 <div class="card">
+<div class="badge">🧠 Clean Setup</div>
 <h3>White Desk Organizer</h3>
-<div class="price">$18</div>
-<a class="buy" href="https://amzn.to/3NPFV1p" target="_blank">View on Amazon →</a>
+<p class="desc">Declutter your desk and make your setup look aesthetic in seconds.</p>
+<a class="buy" href="https://amzn.to/3NPFV1p" target="_blank">Check latest price →</a>
 </div>
 
-<!-- 4 -->
 <div class="card">
+<div class="badge">💎 Instant Upgrade</div>
 <h3>Leather Desk Mat</h3>
-<div class="price">$24</div>
-<a class="buy" href="https://amzn.to/4sB4EWe" target="_blank">View on Amazon →</a>
+<p class="desc">The easiest way to make any desk look premium and put together.</p>
+<a class="buy" href="https://amzn.to/4sB4EWe" target="_blank">Check latest price →</a>
 </div>
 
-<!-- 5 -->
 <div class="card">
+<div class="badge">📱 Must Have</div>
 <h3>Astronaut Phone Stand</h3>
-<div class="price">$15</div>
-<a class="buy" href="https://amzn.to/47sYGOO" target="_blank">View on Amazon →</a>
+<p class="desc">Cute + functional. Makes your desk setup instantly better.</p>
+<a class="buy" href="https://amzn.to/47sYGOO" target="_blank">Check latest price →</a>
 </div>
 
-<!-- 6 -->
 <div class="card">
+<div class="badge">🌈 Room Glow</div>
 <h3>RGB LED Strip Lights</h3>
-<div class="price">$16</div>
-<a class="buy" href="https://amzn.to/4ddobaC" target="_blank">View on Amazon →</a>
+<p class="desc">Transform your entire room vibe instantly with color lighting.</p>
+<a class="buy" href="https://amzn.to/4ddobaC" target="_blank">Check latest price →</a>
 </div>
 
-<!-- 7 -->
 <div class="card">
+<div class="badge">🏡 Room Upgrade</div>
 <h3>Floating Wall Shelves</h3>
-<div class="price">$32</div>
-<a class="buy" href="https://amzn.to/3PM8RrA" target="_blank">View on Amazon →</a>
+<p class="desc">Turn empty walls into aesthetic Pinterest-style decor instantly.</p>
+<a class="buy" href="https://amzn.to/3PM8RrA" target="_blank">Check latest price →</a>
 </div>
 
 </div>
 
 <div class="footer">
-This page contains affiliate links. I may earn a small commission at no extra cost to you.
+Prices change frequently. Tap through to Amazon to see the latest price and availability.
 </div>
 
 </div>

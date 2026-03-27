@@ -1,851 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Soft Finds | Amazon Room Decor Finds</title>
-  <meta name="description" content="Cute, cozy Amazon room decor and desk finds curated to make your space feel softer, prettier, and more put together." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --sky: #d8eef8;
-      --sky-2: #bfe3f3;
-      --blue: #4a9ec7;
-      --blue-deep: #2f87b5;
-      --mint: #d7f4ea;
-      --mint-2: #bcebdc;
-      --pink: #ffd8e8;
-      --pink-2: #ffc4dc;
-      --lav: #ece3fb;
-      --lav-2: #ddd0f8;
-      --butter: #fff0c9;
-      --white: #ffffff;
-      --off: #f7fbfe;
-      --text: #203240;
-      --text-2: #556878;
-      --text-3: #89a1b2;
-      --border: rgba(74, 158, 199, 0.16);
-      --shadow: 0 14px 40px rgba(74, 158, 199, 0.12);
-      --shadow-hover: 0 18px 44px rgba(74, 158, 199, 0.20);
-      --cta: linear-gradient(135deg, #4a9ec7 0%, #40c6af 100%);
-      --cta-hover: linear-gradient(135deg, #2f87b5 0%, #2daf92 100%);
-      --pill: 999px;
-      --r-card: 22px;
-      --r-sm: 14px;
-      --transition: .28s cubic-bezier(.4,0,.2,1);
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(216, 238, 248, .9) 0%, rgba(216, 238, 248, 0) 34%),
-        radial-gradient(circle at top right, rgba(255, 216, 232, .8) 0%, rgba(255, 216, 232, 0) 28%),
-        linear-gradient(180deg, #fbfeff 0%, #f5fbff 100%);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    a { text-decoration: none; color: inherit; }
-    button, select, input { font: inherit; }
-    img { display: block; max-width: 100%; }
-
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-wrap {
-      min-height: 76px;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.15rem;
-      white-space: nowrap;
-    }
-
-    .logo-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #45d1bc, #58a9d4);
-      box-shadow: 0 0 0 5px rgba(88,169,212,.14);
-      flex: 0 0 auto;
-    }
-
-    .search-bar {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 56px;
-      padding: 0 18px;
-      border-radius: var(--pill);
-      background: rgba(255,255,255,.78);
-      border: 1.5px solid var(--border);
-      color: var(--text-3);
-      box-shadow: 0 4px 18px rgba(74,158,199,.06);
-    }
-
-    .search-bar input {
-      width: 100%;
-      border: none;
-      outline: none;
-      background: transparent;
-      color: var(--text);
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .btn-ghost,
-    .btn-fill,
-    .product-btn,
-    .banner-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border-radius: var(--pill);
-      font-weight: 700;
-      transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
-    }
-
-    .btn-ghost:hover,
-    .btn-fill:hover,
-    .product-btn:hover,
-    .banner-btn:hover { transform: translateY(-2px); }
-
-    .btn-ghost {
-      min-height: 52px;
-      padding: 0 18px;
-      background: rgba(255,255,255,.78);
-      border: 1.5px solid var(--border);
-      color: var(--text-2);
-    }
-
-    .btn-fill,
-    .product-btn,
-    .banner-btn {
-      min-height: 52px;
-      padding: 0 20px;
-      color: var(--white);
-      background: var(--cta);
-      box-shadow: 0 8px 24px rgba(74,158,199,.26);
-    }
-
-    .btn-fill:hover,
-    .product-btn:hover,
-    .banner-btn:hover { background: var(--cta-hover); }
-
-    .hero {
-      padding: 28px 0 14px;
-    }
-
-    .hero-box {
-      position: relative;
-      overflow: hidden;
-      border-radius: 34px;
-      padding: 34px 30px;
-      background: linear-gradient(135deg, rgba(216,238,248,.95) 0%, rgba(213,245,234,.88) 42%, rgba(236,227,251,.90) 78%, rgba(255,216,232,.88) 100%);
-      border: 1px solid rgba(255,255,255,.72);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-box::after {
-      content: '';
-      position: absolute;
-      right: -60px;
-      top: -80px;
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 70%);
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border-radius: var(--pill);
-      background: rgba(255,255,255,.70);
-      border: 1px solid rgba(255,255,255,.88);
-      color: var(--blue-deep);
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: .10em;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      margin-top: 18px;
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(2.6rem, 6vw, 4.7rem);
-      line-height: .96;
-      letter-spacing: -.04em;
-      max-width: 12ch;
-    }
-
-    .hero h1 em {
-      font-style: italic;
-      color: var(--blue);
-    }
-
-    .hero p {
-      margin-top: 12px;
-      max-width: 62ch;
-      font-size: 1.04rem;
-      color: var(--text-2);
-    }
-
-    .hero-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 16px;
-      border-radius: var(--pill);
-      background: rgba(255,255,255,.78);
-      border: 1px solid rgba(255,255,255,.92);
-      color: var(--text-2);
-      font-size: .92rem;
-      box-shadow: 0 6px 18px rgba(74,158,199,.08);
-    }
-
-    .cat-bar {
-      margin-top: 16px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .cat-inner {
-      display: flex;
-      gap: 22px;
-      overflow-x: auto;
-      scrollbar-width: none;
-      padding: 0 6px;
-    }
-
-    .cat-inner::-webkit-scrollbar { display: none; }
-
-    .cat-tab {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 0;
-      border: none;
-      background: none;
-      color: var(--text-2);
-      font-weight: 500;
-      white-space: nowrap;
-      cursor: pointer;
-    }
-
-    .cat-tab.active {
-      color: var(--blue-deep);
-      font-weight: 700;
-    }
-
-    .cat-tab.active::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: -1px;
-      height: 4px;
-      border-radius: var(--pill);
-      background: linear-gradient(90deg, var(--blue), #46cab6);
-    }
-
-    .main {
-      display: grid;
-      grid-template-columns: 260px 1fr;
-      gap: 24px;
-      padding: 22px 0 48px;
-    }
-
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-      align-self: start;
-      position: sticky;
-      top: 96px;
-    }
-
-    .side-card {
-      background: rgba(255,255,255,.78);
-      border: 1px solid var(--border);
-      border-radius: 26px;
-      padding: 22px;
-      box-shadow: 0 8px 24px rgba(74,158,199,.06);
-    }
-
-    .side-title {
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--text-3);
-      margin-bottom: 16px;
-    }
-
-    .price-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .price-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--text-2);
-      font-size: 1rem;
-    }
-
-    .dot {
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      border: 2px solid #9cc7e1;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 auto;
-    }
-
-    .dot::after {
-      content: '';
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: transparent;
-    }
-
-    .price-item.active .dot::after {
-      background: linear-gradient(135deg, var(--blue), #46cab6);
-    }
-
-    .sort-select {
-      width: 100%;
-      min-height: 54px;
-      border-radius: 16px;
-      border: 1.5px solid var(--border);
-      background: #f9fdff;
-      color: var(--text-2);
-      padding: 0 14px;
-      outline: none;
-    }
-
-    .content-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      margin-bottom: 18px;
-    }
-
-    .count {
-      font-size: 1.02rem;
-      color: var(--text-2);
-    }
-
-    .count strong { color: var(--text); }
-
-    .view-toggle {
-      display: flex;
-      gap: 10px;
-    }
-
-    .view-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      border: 1.5px solid var(--border);
-      background: rgba(255,255,255,.82);
-      color: var(--text-3);
-      cursor: pointer;
-    }
-
-    .view-btn.active {
-      color: var(--blue-deep);
-      box-shadow: inset 0 0 0 2px rgba(74,158,199,.12);
-    }
-
-    .drop-banner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-      padding: 24px 24px;
-      border-radius: 28px;
-      background: linear-gradient(135deg, rgba(216,238,248,.95) 0%, rgba(215,244,234,.92) 100%);
-      border: 1px solid var(--border);
-      box-shadow: 0 10px 30px rgba(74,158,199,.08);
-      margin-bottom: 22px;
-    }
-
-    .drop-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .drop-icon {
-      font-size: 2rem;
-      flex: 0 0 auto;
-    }
-
-    .drop-banner h2 {
-      font-family: 'DM Serif Display', serif;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-      line-height: 1.04;
-    }
-
-    .drop-banner p {
-      margin-top: 4px;
-      color: var(--text-2);
-    }
-
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .product-card {
-      background: rgba(255,255,255,.88);
-      border: 1px solid rgba(255,255,255,.88);
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-hover);
-      border-color: rgba(74,158,199,.30);
-    }
-
-    .product-media {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-    }
-
-    .product-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .45s ease;
-    }
-
-    .product-card:hover .product-media img { transform: scale(1.05); }
-
-    .badge,
-    .wish {
-      position: absolute;
-      top: 14px;
-      z-index: 2;
-      background: rgba(255,255,255,.86);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 6px 20px rgba(74,158,199,.10);
-    }
-
-    .badge {
-      left: 14px;
-      padding: 8px 12px;
-      border-radius: var(--pill);
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: #4c6f89;
-    }
-
-    .wish {
-      right: 14px;
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      font-size: 1rem;
-    }
-
-    .bg-blue { background: linear-gradient(145deg, #d7eefb, #b9e1f5); }
-    .bg-pink { background: linear-gradient(145deg, #ffe3ee, #ffc8de); }
-    .bg-mint { background: linear-gradient(145deg, #ddf6ee, #c2eedf); }
-    .bg-lav { background: linear-gradient(145deg, #eee6fd, #dacdf8); }
-    .bg-peach { background: linear-gradient(145deg, #ffe8d9, #ffd5bf); }
-
-    .placeholder {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: 3rem;
-    }
-
-    .product-body {
-      padding: 18px 18px 20px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-
-    .product-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.06rem;
-      line-height: 1.28;
-      margin-bottom: 8px;
-    }
-
-    .product-desc {
-      font-size: .92rem;
-      color: var(--text-2);
-      line-height: 1.55;
-      flex: 1;
-      margin-bottom: 12px;
-    }
-
-    .stars {
-      color: #f2b73c;
-      font-size: .94rem;
-      letter-spacing: .06em;
-      margin-bottom: 12px;
-    }
-
-    .stars span {
-      color: var(--text-3);
-      letter-spacing: normal;
-      margin-left: 6px;
-      font-size: .9rem;
-    }
-
-    .product-footer {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .price small {
-      display: block;
-      font-size: .82rem;
-      color: var(--text-3);
-      margin-bottom: 2px;
-    }
-
-    .price strong {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      line-height: 1;
-      color: var(--blue-deep);
-    }
-
-    .product-btn,
-    .banner-btn {
-      padding: 0 18px;
-      white-space: nowrap;
-    }
-
-    .disclosure {
-      margin-top: 22px;
-      padding: 18px 20px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.78);
-      border: 1px solid var(--border);
-      color: var(--text-2);
-      font-size: .9rem;
-    }
-
-    @media (max-width: 1024px) {
-      .nav-wrap {
-        grid-template-columns: 1fr;
-        padding: 14px 0;
-      }
-
-      .main {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        position: static;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-
-    @media (max-width: 680px) {
-      .hero-box { padding: 26px 20px; }
-      .hero h1 { max-width: none; }
-      .sidebar { grid-template-columns: 1fr; }
-      .product-grid { grid-template-columns: 1fr; }
-      .content-top,
-      .drop-banner { flex-direction: column; align-items: flex-start; }
-      .search-bar { min-height: 52px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Soft Finds | Aesthetic Amazon Finds</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: linear-gradient(180deg,#f6fbff,#eef7ff);
+  color: #2a3b4c;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  font-family: 'DM Serif Display';
+  font-size: 20px;
+}
+
+.btn {
+  background: linear-gradient(135deg,#4a9ec7,#40c6af);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg,#d8eef8,#ffd8e8);
+  padding: 40px;
+  border-radius: 20px;
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display';
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #5f6f80;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  font-size: 16px;
+}
+
+.price {
+  font-size: 22px;
+  color: #4a9ec7;
+  font-weight: bold;
+}
+
+.buy {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  background: linear-gradient(135deg,#4a9ec7,#40c6af);
+  color: white;
+  padding: 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* footer */
+.footer {
+  margin-top: 30px;
+  font-size: 13px;
+  color: #6b7f94;
+}
+</style>
 </head>
+
 <body>
-  <nav>
-    <div class="container nav-wrap">
-      <a class="logo" href="#top">
-        <span class="logo-dot"></span>
-        <span>The Soft Finds</span>
-      </a>
 
-      <label class="search-bar">
-        <span>🔎</span>
-        <input type="text" placeholder="Search cute finds..." />
-      </label>
+<div class="container">
 
-      <div class="nav-actions">
-        <a class="btn-ghost" href="#shop">Room Decor</a>
-        <a class="btn-fill" href="#shop">Shop Now ✦</a>
-      </div>
-    </div>
-  </nav>
+<nav>
+  <div class="logo">The Soft Finds</div>
+  <a href="#shop" class="btn">Shop Now ✨</a>
+</nav>
 
-  <section class="hero" id="top">
-    <div class="container">
-      <div class="hero-box">
-        <span class="hero-tag">Soft, curated, clickable</span>
-        <h1>Aesthetic Finds, <em>Curated for You</em> 🌸</h1>
-        <p>Handpicked Amazon room decor and desk upgrades that feel cozy, pretty, and actually worth clicking. No newsletter detour. No clutter maze. Just cute finds your visitors can instantly imagine in their own room.</p>
+<div class="hero">
+  <h1>Aesthetic Finds, Curated for You 🌸</h1>
+  <p>Viral Amazon room decor that makes your space feel cozy, aesthetic, and Pinterest-worthy.</p>
+</div>
 
-        <div class="hero-chips">
-          <span class="chip">☁️ Cozy room aesthetic</span>
-          <span class="chip">📦 All on Amazon</span>
-          <span class="chip">💸 Budget-friendly picks</span>
-          <span class="chip">✨ Updated with viral finds</span>
-        </div>
-      </div>
+<div class="grid" id="shop">
 
-      <div class="cat-bar">
-        <div class="cat-inner">
-          <button class="cat-tab active">✨ All Finds</button>
-          <button class="cat-tab">🏮 Room Decor</button>
-          <button class="cat-tab">🕯️ Cozy Lifestyle</button>
-          <button class="cat-tab">🧸 Cute Extras</button>
-          <button class="cat-tab">💻 Desk Setup</button>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- 1 -->
+<div class="card">
+<h3>Astronaut Galaxy Projector</h3>
+<div class="price">$35</div>
+<a class="buy" href="https://amzn.to/4t3k8SE" target="_blank">View on Amazon →</a>
+</div>
 
-  <main class="container main">
-    <aside class="sidebar">
-      <div class="side-card">
-        <div class="side-title">Price Range</div>
-        <div class="price-list">
-          <div class="price-item active"><span class="dot"></span><span>All Prices</span></div>
-          <div class="price-item"><span class="dot"></span><span>Under $20</span></div>
-          <div class="price-item"><span class="dot"></span><span>$20 – $35</span></div>
-          <div class="price-item"><span class="dot"></span><span>$35 – $50</span></div>
-          <div class="price-item"><span class="dot"></span><span>$50+</span></div>
-        </div>
-      </div>
+<!-- 2 -->
+<div class="card">
+<h3>Minimal LED Desk Lamp</h3>
+<div class="price">$29</div>
+<a class="buy" href="https://amzn.to/4uVEajY" target="_blank">View on Amazon →</a>
+</div>
 
-      <div class="side-card">
-        <div class="side-title">Sort By</div>
-        <select class="sort-select">
-          <option>✨ Featured</option>
-          <option>🔥 Most Popular</option>
-          <option>💸 Price: Low to High</option>
-          <option>💎 Price: High to Low</option>
-        </select>
-      </div>
-    </aside>
+<!-- 3 -->
+<div class="card">
+<h3>White Desk Organizer</h3>
+<div class="price">$18</div>
+<a class="buy" href="https://amzn.to/3NPFV1p" target="_blank">View on Amazon →</a>
+</div>
 
-    <section>
-      <div class="content-top">
-        <p class="count">Showing <strong>7</strong> soft finds</p>
-        <div class="view-toggle">
-          <button class="view-btn active">▦</button>
-          <button class="view-btn">☰</button>
-        </div>
-      </div>
+<!-- 4 -->
+<div class="card">
+<h3>Leather Desk Mat</h3>
+<div class="price">$24</div>
+<a class="buy" href="https://amzn.to/4sB4EWe" target="_blank">View on Amazon →</a>
+</div>
 
-      <div class="drop-banner">
-        <div class="drop-left">
-          <div class="drop-icon">🌟</div>
-          <div>
-            <h2>This Week’s Cozy Drop</h2>
-            <p>7 aesthetic Amazon finds for spaces that need a little more glow, softness, and "where did you get that?" energy.</p>
-          </div>
-        </div>
-        <a class="banner-btn" href="#shop">Shop Drop →</a>
-      </div>
+<!-- 5 -->
+<div class="card">
+<h3>Astronaut Phone Stand</h3>
+<div class="price">$15</div>
+<a class="buy" href="https://amzn.to/47sYGOO" target="_blank">View on Amazon →</a>
+</div>
 
-      <div class="product-grid" id="shop">
-        <article class="product-card">
-          <div class="product-media bg-blue">
-            <span class="badge">Editor’s Pick</span>
-            <span class="wish">♡</span>
-            <img src="PASTE_GALAXY_PROJECTOR_IMAGE_URL_HERE" alt="Astronaut galaxy projector" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="placeholder" style="display:none;">☁️</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-name">Astronaut Galaxy Projector</h3>
-            <p class="product-desc">Colour-changing room glow that turns a plain ceiling into a tiny universe. The kind of find that makes a bedroom feel instantly softer.</p>
-            <div class="stars">★★★★★ <span>(2.4k)</span></div>
-            <div class="product-footer">
-              <div class="price"><small>From</small><strong>$35</strong></div>
-              <a class="product-btn" href="PASTE_GALAXY_PROJECTOR_AMAZON_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">Amazon →</a>
-            </div>
-          </div>
-        </article>
+<!-- 6 -->
+<div class="card">
+<h3>RGB LED Strip Lights</h3>
+<div class="price">$16</div>
+<a class="buy" href="https://amzn.to/4ddobaC" target="_blank">View on Amazon →</a>
+</div>
 
-        <article class="product-card">
-          <div class="product-media bg-peach">
-            <span class="badge">Cozy Glow</span>
-            <span class="wish">♡</span>
-            <img src="PASTE_BEDSIDE_LAMP_IMAGE_URL_HERE" alt="Bedside touch lamp" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="placeholder" style="display:none;">🕯️</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-name">Bedside Touch Lamp</h3>
-            <p class="product-desc">Warm light, easy tap control, and a cleaner nightstand vibe. This is the quiet upgrade that makes a room feel more expensive.</p>
-            <div class="stars">★★★★★ <span>(1.8k)</span></div>
-            <div class="product-footer">
-              <div class="price"><small>From</small><strong>$29</strong></div>
-              <a class="product-btn" href="PASTE_BEDSIDE_LAMP_AMAZON_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">Amazon →</a>
-            </div>
-          </div>
-        </article>
+<!-- 7 -->
+<div class="card">
+<h3>Floating Wall Shelves</h3>
+<div class="price">$32</div>
+<a class="buy" href="https://amzn.to/3PM8RrA" target="_blank">View on Amazon →</a>
+</div>
 
-        <article class="product-card">
-          <div class="product-media bg-lav">
-            <span class="badge">Clean Desk</span>
-            <span class="wish">♡</span>
-            <img src="PASTE_DESK_ORGANIZER_IMAGE_URL_HERE" alt="Desk organizer" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="placeholder" style="display:none;">📓</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-name">Minimal Desk Organizer</h3>
-            <p class="product-desc">A messy desk’s natural enemy. Pens, sticky notes, and little chaos goblins, all tucked away in one cute organizer.</p>
-            <div class="stars">★★★★★ <span>(987)</span></div>
-            <div class="product-footer">
-              <div class="price"><small>From</small><strong>$18</strong></div>
-              <a class="product-btn" href="PASTE_DESK_ORGANIZER_AMAZON_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">Amazon →</a>
-            </div>
-          </div>
-        </article>
+</div>
 
-        <article class="product-card">
-          <div class="product-media bg-mint">
-            <span class="badge">Most Saved</span>
-            <span class="wish">♡</span>
-            <img src="PASTE_DESK_PAD_IMAGE_URL_HERE" alt="Leather desk pad" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="placeholder" style="display:none;">💻</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-name">Leather Desk Pad</h3>
-            <p class="product-desc">The fastest way to make a basic desk look polished. Soft texture, cleaner lines, and a subtle "I have my life together" effect.</p>
-            <div class="stars">★★★★★ <span>(1.6k)</span></div>
-            <div class="product-footer">
-              <div class="price"><small>From</small><strong>$24</strong></div>
-              <a class="product-btn" href="PASTE_DESK_PAD_AMAZON_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">Amazon →</a>
-            </div>
-          </div>
-        </article>
+<div class="footer">
+This page contains affiliate links. I may earn a small commission at no extra cost to you.
+</div>
 
-        <article class="product-card">
-          <div class="product-media bg-pink">
-            <span class="badge">Useful Cute</span>
-            <span class="wish">♡</span>
-            <img src="PASTE_PHONE_STAND_IMAGE_URL_HERE" alt="Phone stand" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="placeholder" style="display:none;">📱</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-name">Adjustable Phone Stand</h3>
-            <p class="product-desc">Tiny desk accessory, surprisingly big payoff. Better posture, cleaner setup, and no more phone lying face-down in keyboard traffic.</p>
-            <div class="stars">★★★★★ <span>(1.2k)</span></div>
-            <div class="product-footer">
-              <div class="price"><small>From</small><strong>$15</strong></div>
-              <a class="product-btn" href="PASTE_PHONE_STAND_AMAZON_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">Amazon →</a>
-            </div>
-          </div>
-        </article>
+</div>
 
-        <article class="product-card">
-          <div class="product-media bg-blue">
-            <span class="badge">Low Effort</span>
-            <span class="wish">♡</span>
-            <img src="PASTE_FAKE_PLANTS_IMAGE_URL_HERE" alt="Mini fake plants" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="placeholder" style="display:none;">🌿</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-name">Mini Artificial Plants</h3>
-            <p class="product-desc">All the freshness, none of the plant guilt. Perfect for desks, shelves, and corners that need texture without maintenance.</p>
-            <div class="stars">★★★★★ <span>(2.1k)</span></div>
-            <div class="product-footer">
-              <div class="price"><small>From</small><strong>$14</strong></div>
-              <a class="product-btn" href="PASTE_FAKE_PLANTS_AMAZON_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">Amazon →</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="product-card">
-          <div class="product-media bg-peach">
-            <span class="badge">Room Upgrade</span>
-            <span class="wish">♡</span>
-            <img src="PASTE_FLOATING_SHELVES_IMAGE_URL_HERE" alt="Floating shelves" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="placeholder" style="display:none;">🪄</div>
-          </div>
-          <div class="product-body">
-            <h3 class="product-name">Wooden Floating Shelves</h3>
-            <p class="product-desc">The blank-wall rescue mission. Adds storage, styling space, and that Pinterest-home feeling without needing a full makeover.</p>
-            <div class="stars">★★★★★ <span>(3.0k)</span></div>
-            <div class="product-footer">
-              <div class="price"><small>From</small><strong>$32</strong></div>
-              <a class="product-btn" href="PASTE_FLOATING_SHELVES_AMAZON_LINK_HERE" target="_blank" rel="nofollow sponsored noopener">Amazon →</a>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <div class="disclosure">This page contains affiliate links. If someone buys through them, I may earn a small commission at no extra cost to them. Tiny thank-you coin, same Amazon price.</div>
-    </section>
-  </main>
 </body>
 </html>
